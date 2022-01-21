@@ -3,10 +3,14 @@
 ## 概要
 Node Editor / All Mode
 
-指定したBlenderファイルからCompositing設定の読み込みを行うアドオンです。<br>
-Compositingの設定を合わせて、ViewLayer、LineSet/LineStyleの設定を読み込みます。
+指定したBlenderファイルからCompositing関連設定の読み込みを行うアドオンです。
 
-### 注意
+以下の設定を読み込みます。
+* Compositingノード
+* ViewLayerのLineSet,LineStyle
+* ViewLayerのShaderAOV
+
+## 注意
 * 特定のCompoisitingノードでは値が一部読み込まれない可能性があります。
 * Layout > Frameは位置がズレる可能性があります。
   * Blender自体の不具合により正常な位置を取得出来ない状態です。今後修正される可能性があります。
