@@ -33,7 +33,7 @@ Compositingの設定を合わせて、ViewLayer、LineSet/LineStyleの設定を�
 準備中
 
 ## インストール
-Project Studio Qが公開している Tools:Q よりインストールしてください。
+Project Studio Qが公開している [Tools:Q](https://github.com/Project-StudioQ/toolsq_common) よりインストールしてください。
 
 ## ライセンス
 このBlenderアドオンは GNU Public License v2 です。
