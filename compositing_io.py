@@ -149,7 +149,7 @@ class QCOMMON_PT_compositing_io_base(bpy.types.Panel):
 
 class QCOMMON_PT_compositing_io_mdl(QCOMMON_PT_compositing_io_base):
     bl_idname = "QCOMMON_PT_compositing_io_mdl"
-    bl_category = "Q_MDL"
+    bl_category = "Q_COMMON"
 
 # ----------------------------------------------------------------------------------------------------
 # Register / Unregister
