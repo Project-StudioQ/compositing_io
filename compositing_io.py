@@ -138,11 +138,11 @@ class QCOMMON_PT_compositing_io_base(bpy.types.Panel):
         row.prop(props, "load_path", text="Load Path")
         row.operator(QCOMMON_OT_compositing_io_select_load_path.bl_idname, text="", icon="FILE_FOLDER")
 
-        col.prop(props, "is_clear_node", text="既存のノードを削除する?")
-        col.prop(props, "is_clear_view_layer", text="既存のViewLayerを削除する?")
-        col.prop(props, "is_clear_freestyle", text="既存のLineSet, LineStyleを削除する?")
-        col.prop(props, "is_clear_node_groups", text="既存のNodeGroupsを削除する?")
-        col.prop(props, "add_view_layer_name", text="ViewLayerに追加する文字")
+        col.prop(props, "is_clear_node", text="Delete current CompositingNodes?")
+        col.prop(props, "is_clear_view_layer", text="Delete current ViewLayers?")
+        col.prop(props, "is_clear_freestyle", text="Delete current LineSet, LineStyle?")
+        col.prop(props, "is_clear_node_groups", text="Delete current NodeGroups?")
+        col.prop(props, "add_view_layer_name", text="Add ViewLayer Text")
 
         col = layout.column()
         col.operator(QCOMMON_OT_compositing_io_load.bl_idname, icon="IMPORT")
