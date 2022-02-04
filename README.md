@@ -34,7 +34,7 @@ Node Editor / All Mode
   * 上記設定を元に読み込みを実行します。
 
 ## 動画
-準備中
+https://www.youtube.com/watch?v=gwiI7nSzigI
 
 ## インストール
 Project Studio Qが公開している [Tools:Q](https://github.com/Project-StudioQ/toolsq_common) よりインストールしてください。
