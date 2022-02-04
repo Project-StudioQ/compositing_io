@@ -19,7 +19,7 @@ Load the following settings.
   * [Remove node->offsetx/offsety [WIP]](https://developer.blender.org/D6540)
 
 ## UI
-![image](https://user-images.githubusercontent.com/1855970/150478232-9836f8aa-dfc3-45ef-9159-55d28aea1d25.png)
+![image](https://user-images.githubusercontent.com/1855970/152464442-26f39ab2-e1d3-4608-9f57-e45b10d9e742.png)
 
 * LoadPath
   * The path to the Blender file to load.
