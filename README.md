@@ -1,5 +1,7 @@
 # Tools:Q Common Compositing Loader
 
+[English](README.en.md)
+
 ## 概要
 Node Editor / All Mode
 
