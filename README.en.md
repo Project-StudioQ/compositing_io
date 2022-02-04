@@ -23,14 +23,16 @@ Load the following settings.
 
 * LoadPath
   * The path to the Blender file to load.
-* 既存のノードを削除する？
+* Delete current CompositingNodes
   * Deletes the currently configured node and then loads it.
-* 既存のViewLayerを削除する？
+* Delete current ViewLayers
   * Delete the currently set ViewLayer and then load it.
-* 既存のLineSetsを削除する？
+* Delete current LineSet, LineStyle
   * Delete the currently set LineSets and then load them.
   * If you do not delete the file, the new file will be added with the same name without overwriting the old one.
-* ViewLayerに追加する文字
+* Delete current NodeGroups
+  * Delete the currently configured NodeGroups and then load them.
+* Add ViewLayer Text
   * The character to be added to the head of the ViewLayer when loading.
 * Load
   * Execute loading based on the above settings.

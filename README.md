@@ -23,14 +23,16 @@ Node Editor / All Mode
 
 * LoadPath
   * 読み込みを行うBlenderファイルのパス。
-* 既存のノードを削除する？
+* Delete current CompositingNodes
   * 現在設定されているノードを削除してから読み込みます。
-* 既存のViewLayerを削除する？
+* "Delete current ViewLayers
   * 現在設定されているViewLayerを削除してから読み込みます。
-* 既存のLineSetsを削除する？
+* Delete current LineSet, LineStyle
   * 現在設定されているLineSetsを削除してから読み込みます。
   * ※削除しない場合は同一名でも上書きせず同一名で新規追加されます。
-* ViewLayerに追加する文字
+* Delete current NodeGroups
+  * 現在設定されているNodeGroupsを削除してから読み込みます。
+* Add ViewLayer Text
   * 読み込み時にViewLayerの頭に追加する文字です。
 * Load
   * 上記設定を元に読み込みを実行します。
