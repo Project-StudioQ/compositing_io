@@ -19,13 +19,13 @@ Node Editor / All Mode
   * [Remove node->offsetx/offsety [WIP]](https://developer.blender.org/D6540)
 
 ## UI
-![image](https://user-images.githubusercontent.com/1855970/150478232-9836f8aa-dfc3-45ef-9159-55d28aea1d25.png)
+![image](https://user-images.githubusercontent.com/1855970/152464403-afc43d16-699d-48b3-a1b7-b7555413615c.png)
 
 * LoadPath
   * 読み込みを行うBlenderファイルのパス。
 * Delete current CompositingNodes
   * 現在設定されているノードを削除してから読み込みます。
-* "Delete current ViewLayers
+* Delete current ViewLayers
   * 現在設定されているViewLayerを削除してから読み込みます。
 * Delete current LineSet, LineStyle
   * 現在設定されているLineSetsを削除してから読み込みます。
