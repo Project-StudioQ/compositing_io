@@ -67,6 +67,14 @@ class QCOMMON_OT_compositing_io_load(bpy.types.Operator):
     def execute(self, context):
         props = context.scene.compositing_io
 
+        def_layer = compositing_load.get_default_view_layer()
+        if def_layer == None:
+            self.report({'ERROR'}, (
+                "デフォルトのViewLayerの取得に失敗しました.\n" +
+                f"[{compositing_load.get_default_view_layer_name()}]の名前のViewLayerがありません."
+            ))
+            return {'CANCELLED'}        
+
         json_data = compositing_load.load_compositing_option(props.load_path)
         if json_data == None:
             self.report({'ERROR'}, (

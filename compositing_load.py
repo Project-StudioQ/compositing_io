@@ -14,19 +14,8 @@ COMPOSITING_OPTION_NAME_TEMP_FILE = os.path.join(tempfile.gettempdir(), "composi
 DATA_NODE_GROUPS = "/NodeTree/"
 NODE_MARGIN = 300
 DEFAULT_VIEW_LAYER = "View Layer"
+DEFAULT_VIEW_LAYER_VER3 = "ViewLayer"
 DATA_FREESTYLE_LINESTYLE = "/FreestyleLineStyle/"
-
-DEFAULT_AOV_SORT_LIST = [
-    "transparent"
-,   "hl"
-,   "normal"
-,   "sdw1"
-,   "sdw2"
-,   "msk"
-,   "fresnel"
-,   "position"
-,   "tanjentNormal"
-]
 
 # ----------------------------------------------------------------------------------------------------
 # Public Functions
@@ -161,7 +150,10 @@ def remove_view_layer(json_data):
 def remove_view_layers_ignore_default():
     """ デフォルトのViewLayer以外を削除
     """
-    def_layer = bpy.context.scene.view_layers[DEFAULT_VIEW_LAYER]
+    def_layer = get_default_view_layer()
+    if def_layer == None:
+        return
+
     bpy.context.window.view_layer = def_layer
     for layer in bpy.context.scene.view_layers:
         if layer == def_layer:
@@ -203,6 +195,37 @@ def get_render_engine(option):
         str: RenderEngineのタイプ
     """
     return option["render_engine"]
+        
+def get_default_view_layer_name():
+    """Verに応じてデフォルトのViewLayerの名前を取得
+
+    Returns:
+        str: デフォルトのViewLayerの名前
+    """
+    # 3.0以下は「View Layer」
+    if bpy.app.version < (3, 0, 0):
+        return DEFAULT_VIEW_LAYER
+    # 3.0で「ViewLayer」に
+    else:
+        return DEFAULT_VIEW_LAYER_VER3        
+        
+def get_default_view_layer(operator=None):
+    """シーン生成時のデフォルトのViewLayerを取得
+
+    Args:
+        operator (bpy.types.Operator): エラー表示用オペレーター
+
+    Returns:
+        bpy.types.ViewLayer: デフォルトのViewLayer
+    """
+    vls = bpy.context.scene.view_layers
+
+    def_layer_name = get_default_view_layer_name()
+    if def_layer_name not in vls:
+        _show_log(operator, "デフォルトのViewLayerが見つかりません.")
+        return None
+
+    return vls[def_layer_name]
         
 # ----------------------------------------------------------------------------------------------------
 # Private Functions
@@ -258,7 +281,11 @@ def _calc_view_layer_name(view_layer_name):
         str: ViewLayer名
     """
     props = bpy.context.scene.compositing_io
-    if view_layer_name == DEFAULT_VIEW_LAYER or props.add_view_layer_name == "":
+    def_layer = get_default_view_layer()
+    if def_layer == None:
+        return view_layer_name
+
+    if view_layer_name == def_layer.name or props.add_view_layer_name == "":
         return view_layer_name
     else:
         return props.add_view_layer_name + view_layer_name
@@ -571,3 +598,13 @@ def _get_socket(node, socket_name, io_prop_name):
             print(f"[{node.name}]の{io_prop_name}に[{socket_name}]が[{len(sockets)}]個")
             return None
         return sockets[0]
+
+
+# -- Helper --
+
+
+def _show_log(operator, log, log_type="ERROR"):
+    if operator != None:
+        operator.report({log_type}, log)
+    else:
+        print(log)
